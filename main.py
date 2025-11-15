@@ -17,6 +17,11 @@ super(SimpleTransformer, self).__init__()
 self.d_model
 
 #embedding layer: converts token IDs to dense vectors
-self.emmbedding + nn.Embedding(vocab_size, d_model
+self.emmbedding + nn.Embedding(vocab_size, d_model)
 #Generate positional encodings (fixed sine?cosign patterns)
-self.pos_encode =self.generate_positional_encoding(d_model, max_seq_lenth)
+self.pos_encode = self.generate_positional_encoding(d_model, max_seq_lenth)
+#Create transformer encoder layers
+encoder_lyer  nn.TransformerEncoderLayer(
+  d_model = d_maodel, #input output dimention 
+  
+
