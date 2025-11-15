@@ -22,6 +22,8 @@ self.emmbedding + nn.Embedding(vocab_size, d_model)
 self.pos_encode = self.generate_positional_encoding(d_model, max_seq_lenth)
 #Create transformer encoder layers
 encoder_lyer  nn.TransformerEncoderLayer(
-  d_model = d_maodel, #input output dimention 
-  
+  d_model = d_model, #input output dimention 
+    dim_feedforward = 2048, # hidden dimension in feedforword network
+  dropout = 0.1 # dropoutrate for regulariztion 
+  batch_first = True # expected batch size as first dimension 
 
