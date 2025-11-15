@@ -26,4 +26,8 @@ encoder_lyer  nn.TransformerEncoderLayer(
     dim_feedforward = 2048, # hidden dimension in feedforword network
   dropout = 0.1 # dropoutrate for regulariztion 
   batch_first = True # expected batch size as first dimension 
+  )
+
+# Stack multiple encoder layers 
+srelf.transformer_encoder = nn.TrransformerEncoder(encoder_layer, number_layers)
 
