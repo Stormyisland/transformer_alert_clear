@@ -21,14 +21,14 @@ self.emmbedding + nn.Embedding(vocab_size, d_model)
 #Generate positional encodings (fixed sine?cosign patterns)
 self.pos_encode = self.generate_positional_encoding(d_model, max_seq_lenth)
 #Create transformer encoder layers
-encoder_lyer  nn.TransformerEncoderLayer(
-  d_model = d_model, #input output dimention 
+encoder_layer  nn.TransformerEncoderLayer(
+  d_model = d_model, #input output dimension 
     dim_feedforward = 2048, # hidden dimension in feedforword network
   dropout = 0.1 # dropoutrate for regulariztion 
   batch_first = True # expected batch size as first dimension 
   )
 
 # Stack multiple encoder layers 
-srelf.transformer_encoder = nn.TrransformerEncoder(encoder_layer, number_layers)# final projection layer maps from d_model dimensions to a single weight
-self.output_projection = nn.Linar(d_model)
+self.transformer_encoder = nn.TransformerEncoder(encoder_layer, number_layers)# final projection layer maps from d_model dimensions to a single weight
+self.output_projection = nn.Linear(d_model)
 
