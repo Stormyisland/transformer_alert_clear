@@ -29,5 +29,5 @@ encoder_lyer  nn.TransformerEncoderLayer(
   )
 
 # Stack multiple encoder layers 
-srelf.transformer_encoder = nn.TrransformerEncoder(encoder_layer, number_layers)
+srelf.transformer_encoder = nn.TrransformerEncoder(encoder_layer, number_layers)# final projection layer
 
