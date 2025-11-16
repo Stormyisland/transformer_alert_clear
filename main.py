@@ -29,5 +29,6 @@ encoder_lyer  nn.TransformerEncoderLayer(
   )
 
 # Stack multiple encoder layers 
-srelf.transformer_encoder = nn.TrransformerEncoder(encoder_layer, number_layers)# final projection layer
+srelf.transformer_encoder = nn.TrransformerEncoder(encoder_layer, number_layers)# final projection layer maps from d_model dimensions to a single weight
+self.output_projection = nn.Linar(d_model)
 
