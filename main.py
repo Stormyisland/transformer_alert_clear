@@ -30,5 +30,9 @@ encoder_layer  nn.TransformerEncoderLayer(
 
 # Stack multiple encoder layers 
 self.transformer_encoder = nn.TransformerEncoder(encoder_layer, number_layers)# final projection layer maps from d_model dimensions to a single weight
-self.output_projection = nn.Linear(d_model)
+self.output_projection = nn.Linear(d_model, )
+
+def_generate_positional_encoding(self, d_model, max_len):
+
+
 
