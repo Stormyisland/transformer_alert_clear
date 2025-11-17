@@ -37,6 +37,10 @@ def_generate_positional_encoding(self, d_model, max_len):
 Generate positional encoding using sine and cosine functions.
 This helps the model understand the ordser of tokens in a sequence.
 
+Args:
+d_model: Dimension of the model 
+max_len: Maximum sequence length
+
 
 
 
