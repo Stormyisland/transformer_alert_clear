@@ -47,7 +47,7 @@ Positonal encoding tnsor of shape (1, max_length, d_model)
 #Create an empty positional encoding matrix 
 pe = torch.zero(max_len, d_model) 
 
-#Create position indices (0, 1, 2, ..., max length _
+#Create position indices (0, 1, 2, ..., ma
 
    
 
