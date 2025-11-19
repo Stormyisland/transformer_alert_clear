@@ -35,14 +35,14 @@ self.output_projection = nn.Linear(d_model, )
 def_generate_positional_encoding(self, d_model, max_len):
 """
 Generate positional encoding using sine and cosine functions.
-This helps the model understand the ordser of tokens in a sequence.
+This helps the model understand the order of tokens in a sequence.
 
 These Args
 d_model: Dimension of the model 
 max_len: Maximum sequence length
 
 Return>
-Positonal encoding tnsor of shape (1, max_length, d_model)
+Positonal encoding tensor of shape (1, max_length, d_model)
 """
 #Create an empty positional encoding matrix 
 pe = torch.zero(max_len, d_model) 
