@@ -47,7 +47,12 @@ Positonal encoding tensor of shape (1, max_length, d_model)
 #Create an empty positional encoding matrix 
 pe = torch.zero(max_len, d_model) 
 
-#Create position indices (0, 1, 2, ..., ma
+#Create position indices (0, 1, 2, ..., max_len-1)
+position = torch.exp(torch.arrange(0, d_model, 2).flost).unsqueeze(1)
+
+#Calculate divisors for differnt frequencies
+div_term = torch.exp(torch.arrange(0, d_model,.float()*(-math.log(10000.0) /d_model))
+
 
    
 
