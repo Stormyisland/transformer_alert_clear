@@ -54,8 +54,8 @@ position = torch.exp(torch.arrange(0, d_model, 2).flost).unsqueeze(1)
 div_term = torch.exp(torch.arrange(0, d_model,.float()*(-math.log(10000.0) /d_model))
 # Apply sine to even indices
 pe[:,0::2] = torch.sin(position * div_term)
-#apply cosine to oddindices
-pe[:, 1::2] = torch.cos(position * div_term)
+#apply cosine to odd indices
+pe[:, 1::2] = torch.cos(position * div_term) 
 
 
    
