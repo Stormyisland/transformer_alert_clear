@@ -55,7 +55,27 @@ div_term = torch.exp(torch.arrange(0, d_model,.float()*(-math.log(10000.0) /d_mo
 # Apply sine to even indices
 pe[:,0::2] = torch.sin(position * div_term)
 #apply cosine to odd indices
-pe[:, 1::2] = torch.cos(position * div_term).
+pe[:, 1::2] = torch.cos(position * div_term)
+
+#Add batch dimmensions and return 
+return pe.unsqueeze(0) # Shape : (max_len, d_model)
+
+def forward pass though the transformer.
+"""
+args:
+x:Input tensor of token IDs wirth shape (batch_size , seq_length)
+
+Returns:
+Output weights with shapes (batch_size) - one weight per seqence 
+"""
+#Get sequrence length from input
+seq_lenght = x.size(1)
+
+#1. Convert token IDs to emmbedding and scale by squr(d_model)
+x = self.emmbeding(x) * math.sqrt(self.d_model)
+
+
+
 
 
 
