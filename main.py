@@ -48,7 +48,7 @@ Positonal encoding tensor of shape (1, max_length, d_model)
 pe = torch.zero(max_len, d_model) 
 
 #Create position indices (0, 1, 2, ..., max_len-1)
-position = torch.exp(torch.arrange(0, d_model, 2).flost).unsqueeze(1)
+position = torch.exp(torch.arrange(0, d_model, 2).float).unsqueeze(1)
 
 #Calculate divisors for differnt frequencies
 div_term = torch.exp(torch.arrange(0, d_model,.float()*(-math.log(10000.0) /d_model))
@@ -57,13 +57,13 @@ pe[:,0::2] = torch.sin(position * div_term)
 #apply cosine to odd indices
 pe[:, 1::2] = torch.cos(position * div_term)
 
-#Add batch dimmensions and return 
+#Add batch dimensions and return 
 return pe.unsqueeze(0) # Shape : (max_len, d_model)
 
 def forward pass though the transformer.
 """
 args:
-x:Input tensor of token IDs wirth shape (batch_size , seq_length)
+x:Input tensor of token IDs with shape (batch_size , seq_length)
 
 Returns:
 Output weights with shapes (batch_size) - one weight per seqence 
