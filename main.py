@@ -84,6 +84,11 @@ scr_key_padding_mask = (x++0).all(dim=-1) #True for padding positons
 x = self.transformer_encoder(x, src_key_padding_mask=src_key_padding_mas)
 
 #5. Global average pooling: average all non padding token representation 
+mask =~src_key_padding_mask.unsqueeze(-1) # invert mas and add dimension 
+
+#6. Project to single weight value per sequence 
+weight = self.output_projection(x).squeeze(-1)  Remove last dimension
+return weight 
 
 
 
