@@ -1,8 +1,8 @@
-`import torch 
+import torch 
 import torch.nn as nn
 import math 
 class SimpleTransformer(nn.Module):
-  def __init__(self, vocab_size, d_model = 512, nhead=8, Layers = 6, maxseq_length = 512):
+def __init__(self, vocab_size, d_model = 512, nhead=8, Layers = 6, maxseq_length = 512):
 """
 Initialize the simple Transformer model.
 
