@@ -22,11 +22,11 @@ self.emmbedding + nn.Embedding(vocab_size, d_model)
 self.pos_encode = self.generate_positional_encoding(d_model, max_seq_lenth)
 #Create transformer encoder layers
 encoder_layer  nn.TransformerEncoderLayer(
-  d_model = d_model, #input output dimension 
-    dim_feedforward = 2048, # hidden dimension in feedforword network
-  dropout = 0.1 # dropoutrate for regulariztion 
-  batch_first = True # expected batch size as first dimension 
-  )
+d_model = d_model, #input output dimension 
+dim_feedforward = 2048, # hidden dimension in feedforword network
+dropout = 0.1 # dropoutrate for regulariztion 
+batch_first = True # expected batch size as first dimension 
+)
 
 # Stack multiple encoder layers 
 self.transformer_encoder = nn.TransformerEncoder(encoder_layer, number_layers)# final projection layer maps from d_model dimensions to a single weight
@@ -90,7 +90,13 @@ mask =~src_key_padding_mask.unsqueeze(-1) # invert mas and add dimension
 weight = self.output_projection(x).squeeze(-1)  Remove last dimension
 return weight 
 
-
+#How to run the code 
+If__name__==__"main":
+#1. Define model hyperparameters
+vocab_size = 1000 #Number of unique tokens in vocabulary
+d_model = 512 #Size of emmbedding vectors
+nhead = 8  #Number of attentioon heads 
+num_layers = 6 #Number of transformer layers
 
 
 
