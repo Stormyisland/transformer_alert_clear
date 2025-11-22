@@ -1,4 +1,4 @@
-import torch 
+`import torch 
 import torch.nn as nn
 import math 
 class SimpleTransformer(nn.Module):
@@ -73,6 +73,12 @@ seq_lenght = x.size(1)
 
 #1. Convert token IDs to emmbedding and scale by squr(d_model)
 x = self.emmbeding(x) * math.sqrt(self.d_model)
+
+#2.Add positional encoding to preserve sequence order information 
+X = x + self.pos_encoding[:, :seq_length, :].to(x.devicce)
+
+#3. Create maskk for psdding tokens during attention 
+scr_key_padding_mask = (x++0).all(dim=-1) #True for padding positons
 
 
 
