@@ -95,9 +95,19 @@ If__name__==__"main":
 #1. Define model hyperparameters
 vocab_size = 1000 #Number of unique tokens in vocabulary
 d_model = 512 #Size of emmbedding vectors
-nhead = 8  #Number of attentioon heads 
+nhead = 8  #Number of attention heads 
 num_layers = 6 #Number of transformer layers
 
+#2 Initialize model
+model = SimpleTransformer(vocab_size, d_model , nhead, num_layers)
+
+#3. Create example input data
+# Shape:(batch_size,sequence_lenght)
+#Values should be integers beatween 0 and vocab_size_1
+#0 is reserved for padding tokens 
+batch_size =2
+seq_lenght =10 
+input_ids = torch.randint(1, vocab_size, (batch _size, seq_lenght) # Random tokens (1 to vocab_size-1)
 
 
 
