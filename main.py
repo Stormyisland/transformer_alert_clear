@@ -80,6 +80,11 @@ X = x + self.pos_encoding[:, :seq_length, :].to(x.devicce)
 #3. Create maskk for psdding tokens during attention 
 scr_key_padding_mask = (x++0).all(dim=-1) #True for padding positons
 
+#4. Pass through transformer encoder layers
+x = self.transformer_encoder(x, src_key_padding_mask=src_key_padding_mas)
+
+#5. Global average pooling: average all non padding token representation 
+
 
 
 
