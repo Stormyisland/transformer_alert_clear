@@ -107,7 +107,13 @@ model = SimpleTransformer(vocab_size, d_model, nhead, num_layers)
 #0 is reserved for padding tokens 
 batch_size = 2
 seq_lenght = 10 
-input_ids = torch.randint(1, vocab_size, (batch_size, seq_lenght) # Random tokens (1 to vocab_size-1)
+input_ids = torch.randint(1, vocab_size, (batch_size, seq_length) # Random tokens (1 to vocab_size-1)
+
+# 4. run forwaord pass
+with torch.no_grads(): # Diable gradient computation for interference
+   output_weights = model(input_ids)
+   print("Input shape:", input_ids.shape) #(2, 10)
+                          
 
 
 
