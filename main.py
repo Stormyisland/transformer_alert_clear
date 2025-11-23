@@ -66,25 +66,25 @@ args:
 x:Input tensor of token IDs with shape (batch_size , seq_length)
 
 Returns:
-Output weights with shapes (batch_size) - one weight per seqence 
+Output weights with shapes (batch_size) - one weight per sequence 
 """
 #Get sequrence length from input
-seq_lenght = x.size(1)
+seq_length = x.size(1)
 
 #1. Convert token IDs to emmbedding and scale by squr(d_model)
 x = self.emmbeding(x) * math.sqrt(self.d_model)
 
 #2.Add positional encoding to preserve sequence order information 
-X = x + self.pos_encoding[:, :seq_length, :].to(x.devicce)
+X = x + self.pos_encoding[:, :seq_length, :].to(x.device)
 
-#3. Create maskk for psdding tokens during attention 
+#3. Create maskk for padding tokens during attention 
 scr_key_padding_mask = (x++0).all(dim=-1) #True for padding positons
 
 #4. Pass through transformer encoder layers
-x = self.transformer_encoder(x, src_key_padding_mask=src_key_padding_mas)
+x = self.transformer_encoder(x, src_key_padding_mask = src_key_padding_mask)
 
 #5. Global average pooling: average all non padding token representation 
-mask =~src_key_padding_mask.unsqueeze(-1) # invert mas and add dimension 
+mask =~src_key_padding_mask.unsqueeze(-1) # invert mask and add dimension 
 
 #6. Project to single weight value per sequence 
 weight = self.output_projection(x).squeeze(-1)  Remove last dimension
@@ -99,15 +99,15 @@ nhead = 8  #Number of attention heads
 num_layers = 6 #Number of transformer layers
 
 #2 Initialize model
-model = SimpleTransformer(vocab_size, d_model , nhead, num_layers)
+model = SimpleTransformer(vocab_size, d_model, nhead, num_layers)
 
 #3. Create example input data
 # Shape:(batch_size,sequence_lenght)
 #Values should be integers beatween 0 and vocab_size_1
 #0 is reserved for padding tokens 
-batch_size =2
-seq_lenght =10 
-input_ids = torch.randint(1, vocab_size, (batch _size, seq_lenght) # Random tokens (1 to vocab_size-1)
+batch_size = 2
+seq_lenght = 10 
+input_ids = torch.randint(1, vocab_size, (batch_size, seq_lenght) # Random tokens (1 to vocab_size-1)
 
 
 
