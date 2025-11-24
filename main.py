@@ -102,17 +102,19 @@ num_layers = 6 #Number of transformer layers
 model = SimpleTransformer(vocab_size, d_model, nhead, num_layers)
 
 #3. Create example input data
-# Shape:(batch_size,sequence_lenght)
+# Shape:(batch_size,sequence_length)
 #Values should be integers beatween 0 and vocab_size_1
 #0 is reserved for padding tokens 
 batch_size = 2
-seq_lenght = 10 
+seq_length = 10 
 input_ids = torch.randint(1, vocab_size, (batch_size, seq_length) # Random tokens (1 to vocab_size-1)
 
 # 4. run forwaord pass
 with torch.no_grads(): # Diable gradient computation for interference
    output_weights = model(input_ids)
    print("Input shape:", input_ids.shape) #(2, 10)
+   
+   
                           
 
 
