@@ -113,7 +113,11 @@ input_ids = torch.randint(1, vocab_size, (batch_size, seq_length) # Random token
 with torch.no_grads(): # Diable gradient computation for interference
    output_weights = model(input_ids)
    print("Input shape:", input_ids.shape) #(2, 10)
-   
+   print("output weights:", output_weights) # Shape: (2,)- one weight per sequence
+   print(output shape:", output_weight.shape) #Shape; 92,0 - ONE WEIGHT PER SEQUENCE
+
+
+
    
                           
 
