@@ -102,8 +102,8 @@ num_layers = 6 #Number of transformer layers
 model = SimpleTransformer(vocab_size, d_model, nhead, num_layers)
 
 #3. Create example input data
-# Shape:(batch_size,sequence_length)
-#Values should be integers beatween 0 and vocab_size_1
+# Shape:(batch_size, sequence_length)
+#Values should be integers between 0 and vocab_size_1
 #0 is reserved for padding tokens 
 batch_size = 2
 seq_length = 10 
