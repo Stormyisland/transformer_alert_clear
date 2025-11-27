@@ -115,7 +115,15 @@ with torch.no_grads(): # Diable gradient computation for interference
    print("Input shape:", input_ids.shape) #(2, 10)
    print("output weights:", output_weights) # Shape: (2,)- one weight per sequence
    print(output shape:", output_weight.shape) #Shape; 92,0 - ONE WEIGHT PER SEQUENCE
-   print("Output shape:", output_weights>shape
+   print("Output shape:", output_weights.shape)  #(2,)
+
+   ### How to run the code:
+
+   1. **Save code ** to a file (e.g., "simple_transformer.py')
+
+   2. **install requuired dependedcies**:
+   '''bash
+      python simple_transformer 
 
 
 
