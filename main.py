@@ -127,8 +127,12 @@ with torch.no_grads(): # Diable gradient computation for interference
 
    ### Expected Output:
 
-   Input shape:torch.Size({2, 10])
-   Output weight : tensor([=0.1234, 0.5678])
+   Input shape:torch.Size([2, 10])
+   Output weight : tensor([-0.1234, 0.5678])
+   Output shape: torch.Size([2])
+
+   #How to Use with Your Own Data:
+   
    
 
 
