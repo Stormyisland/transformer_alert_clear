@@ -123,7 +123,13 @@ with torch.no_grads(): # Diable gradient computation for interference
 
    2. **install requuired dependedcies**:
    '''bash
-      python simple_transformer 
+      python simple_transformer.py
+
+   ### Expected Output:
+
+   Input shape:torch.Size({2, 10])
+   Output weight : tensor([=0.1234, 0.5678])
+   
 
 
 
