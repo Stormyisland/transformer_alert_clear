@@ -132,6 +132,7 @@ with torch.no_grads(): # Diable gradient computation for interference
    Output shape: torch.Size([2])
 
    #How to Use with Your Own Data:
+   !.**Pprepare your vocabulary
    
    
 
