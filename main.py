@@ -131,8 +131,11 @@ with torch.no_grads(): # Diable gradient computation for interference
    Output weight : tensor([-0.1234, 0.5678])
    Output shape: torch.Size([2])
 
-   #How to Use with Your Own Data:
-   !.**Pprepare your vocabulary
+   ###How to Use with Your Own Data:
+   !.**Prepare your vocabulary**:
+   Create a mapping from woprds to integers
+   vocab = {'<PAD>': 0 ,'hello': 1, 'world':2, 'transformer':3, ...}
+   vocab_size = length(vocab)
    
    
 
