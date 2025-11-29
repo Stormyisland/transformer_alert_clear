@@ -116,12 +116,12 @@ with torch.no_grads(): # Diable gradient computation for interference
    print("output weights:", output_weights) # Shape: (2,)- one weight per sequence
    print(output shape:", output_weight.shape) #Shape; 92,0 - ONE WEIGHT PER SEQUENCE
    print("Output shape:", output_weights.shape)  #(2,)
-
+   '''
    ### How to run the code:
 
    1. **Save code ** to a file (e.g., "simple_transformer.py')
 
-   2. **install requuired dependedcies**:
+   2. install requuired dependedcies**:
    '''bash
       python simple_transformer.py
 
@@ -132,10 +132,19 @@ with torch.no_grads(): # Diable gradient computation for interference
    Output shape: torch.Size([2])
 
    ###How to Use with Your Own Data:
-   !.**Prepare your vocabulary**:
-   Create a mapping from woprds to integers
+   1.Prepare your vocabulary**:
+   Create a mapping from words to integers
    vocab = {'<PAD>': 0 ,'hello': 1, 'world':2, 'transformer':3, ...}
    vocab_size = length(vocab)
+   '''
+
+2. **Tokenize your text**:
+'''python 
+#Convert text to token IDs
+sentence = [1,2,3] #['hello', 'world', transformer']
+
+
+   
    
    
 
